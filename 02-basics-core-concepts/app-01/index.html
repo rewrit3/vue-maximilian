@@ -13,6 +13,7 @@
   </header>
   <section id="user-goal">
     <h2>My Course Goal</h2>
+    <!-- <p v-html="outputGoal()"></p> -->
     <p>{{ outputGoal() }}</p>
     <p>Learn more about <a v-bind:href="vueLink">Vue</a></p>
   </section>
@@ -25,7 +26,7 @@
     data() {
       return {
         courseGoalA: "Learn Vue!",
-        courseGoalB: "Master Vue!",
+        courseGoalB: "<h2>Master Vue!</h2>",
         vueLink: "https://vuejs.org",
       };
     },
