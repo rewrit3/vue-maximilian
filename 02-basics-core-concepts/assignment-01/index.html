@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="styles.css" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<body>
+  <section id="assignment">
+    <!-- 1) Output your name -->
+    <h2>{{ name }}</h2>
+    <!-- 2) Output your age -->
+    <p>{{ age }}</p>
+    <!-- 3) Output your age + 5 -->
+    <p>{{ age + 5 }}</p>
+    <!-- 4) Output a random number (0 to 1) -->
+    <p>{{ Math.random() }}</p>
+    <div>
+      <!-- 5) Display some image you found via Google -->
+      <img v-bind:src="imageUrl" style="width: 400px; margin-bottom: 16px" />
+    </div>
+    <!-- 6) Prepopulate the input field with your name via the "value" attribute -->
+    <input type="text" v-bind:value="name" />
+  </section>
+</body>
+
+<script type="module">
+  import { createApp } from "vue";
+
+  createApp({
+    data() {
+      return {
+        name: "Adolfo",
+        age: 35,
+        imageUrl: "https://w.wallhaven.cc/full/qz/wallhaven-qz13pl.jpg",
+      };
+    },
+  }).mount("#assignment");
+</script>
