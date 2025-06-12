@@ -19,7 +19,7 @@
 
     <p>Result: {{ counter }}</p>
 
-    <input type="text" v-on:input="setName" />
+    <input type="text" v-on:input="setName($event, 'Cruz')" />
     <p>Your name: {{ name }}</p>
   </section>
 </body>
@@ -41,8 +41,8 @@
       reduce(num) {
         this.counter = this.counter - num;
       },
-      setName() {
-        this.name = event.target.value;
+      setName(event, lastName) {
+        this.name = event.target.value + " " + lastName;
       },
     },
   }).mount("#events");
