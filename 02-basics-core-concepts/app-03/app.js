@@ -26,6 +26,15 @@ const app = Vue.createApp({
       this.name = "";
     },
   },
+  computed: {
+    fullName() {
+      if (this.name === "") {
+        return "";
+      }
+
+      return this.name + " " + "Cruz";
+    },
+  },
 });
 
 app.mount("#events");
