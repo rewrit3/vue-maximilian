@@ -1,3 +1,4 @@
+// app1
 const app = Vue.createApp({
   data() {
     return {
@@ -15,10 +16,38 @@ const app = Vue.createApp({
       // console.dir(this.$refs.userText);
     },
   },
+  beforeCreate() {
+    console.log('beforeCreate()');
+  },
+  created() {
+    console.log('created()');
+  },
+  beforeMount() {
+    console.log('beforeMount()');
+  },
+  mounted() {
+    console.log('mounted()');
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate()');
+  },
+  updated() {
+    console.log('updated()');
+  },
+  beforeUnmount() {
+    console.log('beforeUnmount()');
+  },
+  unmounted() {
+    console.log('unmounted()');
+  },
 });
 
 app.mount('#app');
+setTimeout(function () {
+  app.unmount();
+}, 3000);
 
+// app2
 const app2 = Vue.createApp({
   template: `
     <p>{{ favoriteMeal }}</p>
@@ -40,26 +69,26 @@ app2.mount('#app2');
 // message = 'Hello!!!';
 // console.log(longMessage);
 
-const data = {
-  message: 'Hello',
-  longMessage: 'Hello World!',
-};
+// const data = {
+//   message: 'Hello',
+//   longMessage: 'Hello World!',
+// };
 
-const handler = {
-  set(target, key, value) {
-    // console.log(target);
-    // console.log(key);
-    // console.log(value);
+// const handler = {
+//   set(target, key, value) {
+//     // console.log(target);
+//     // console.log(key);
+//     // console.log(value);
 
-    if (key === 'message') {
-      target.longMessage = value + ' World!!!';
-    }
+//     if (key === 'message') {
+//       target.longMessage = value + ' World!!!';
+//     }
 
-    target.message = value;
-  },
-};
+//     target.message = value;
+//   },
+// };
 
-const proxy = new Proxy(data, handler);
-proxy.message = 'Hello!!!';
+// const proxy = new Proxy(data, handler);
+// proxy.message = 'Hello!!!';
 
-console.log(proxy.longMessage);
+// console.log(proxy.longMessage);
