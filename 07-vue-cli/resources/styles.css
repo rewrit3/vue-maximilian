@@ -1,40 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      friends: [
-        {
-          id: 'manuel',
-          name: 'Manuel Lorenz',
-          phone: '0123 45678 90',
-          email: 'manuel@localhost.com',
-        },
-        {
-          id: 'julie',
-          name: 'Julie Jones',
-          phone: '0987 654421 21',
-          email: 'julie@localhost.com',
-        },
-      ],
-    };
-  },
-};
-</script>
-
-<template>
-  <section>
-    <header>
-      <h1>My Friends</h1>
-    </header>
-
-    <ul>
-      <friend-contact></friend-contact>
-      <friend-contact></friend-contact>
-    </ul>
-  </section>
-</template>
-
-<style>
 * {
   box-sizing: border-box;
 }
@@ -98,4 +61,3 @@ header {
   border-color: #ec3169;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
-</style>
