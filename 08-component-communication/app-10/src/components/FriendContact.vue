@@ -15,24 +15,18 @@ export default {
       required: true,
     },
     isFavorite: {
-      type: String,
+      type: Boolean,
       required: false,
-      default: '0',
-      validator: function (value) {
-        return value === '1' || value === '0';
-      },
+      default: false,
+      // validator: function (value) {
+      //   return value === '1' || value === '0';
+      // },
     },
   },
   data() {
     return {
       detailsAreVisible: false,
       friendIsFavorite: this.isFavorite,
-      friend: {
-        id: 'manuel',
-        name: 'Manuel Lorenz',
-        phone: '0123 45678 90',
-        email: 'manuel@localhost.com',
-      },
     };
   },
   methods: {
@@ -40,11 +34,7 @@ export default {
       this.detailsAreVisible = !this.detailsAreVisible;
     },
     toggleFavorite() {
-      if (this.friendIsFavorite === '1') {
-        this.friendIsFavorite = '0';
-      } else {
-        this.friendIsFavorite = '1';
-      }
+      this.friendIsFavorite = !this.friendIsFavorite;
     },
   },
 };
@@ -52,7 +42,7 @@ export default {
 
 <template>
   <li>
-    <h2>{{ name }} {{ friendIsFavorite === '1' ? '(Favorite)' : '' }}</h2>
+    <h2>{{ name }} {{ friendIsFavorite ? '(Favorite)' : '' }}</h2>
 
     <button @click="toggleDetails" style="margin-right: 1rem">
       {{ detailsAreVisible ? 'Hide' : 'Show' }} Details
