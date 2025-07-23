@@ -23,7 +23,7 @@ export default {
       default: false,
     },
   },
-  emits: ['toggle-favorite'],
+  emits: ['toggle-favorite', 'delete'],
   data() {
     return {
       detailsAreVisible: false,
@@ -44,10 +44,13 @@ export default {
   <li>
     <h2>{{ name }} {{ isFavorite ? '(Favorite)' : '' }}</h2>
 
-    <button @click="toggleDetails" style="margin-right: 1rem">
+    <button style="margin-right: 1rem" @click="toggleDetails">
       {{ detailsAreVisible ? 'Hide' : 'Show' }} Details
     </button>
-    <button @click="toggleFavorite">Toggle Favorite</button>
+    <button style="margin-right: 1rem" @click="toggleFavorite">
+      Toggle Favorite
+    </button>
+    <button @click="$emit('delete', id)">Delete</button>
 
     <ul v-if="detailsAreVisible">
       <li><strong>Phone:</strong> {{ phoneNumber }}</li>
