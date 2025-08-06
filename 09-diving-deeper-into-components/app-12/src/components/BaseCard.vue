@@ -1,5 +1,9 @@
 <template>
   <section>
+    <header>
+      <slot name="header"></slot>
+    </header>
+
     <slot></slot>
   </section>
 </template>
