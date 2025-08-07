@@ -1,10 +1,10 @@
 <template>
   <base-card>
-    <template v-slot:header>
+    <!-- <template v-slot:header>
       <h2>Available Badges</h2>
-    </template>
+    </template> -->
 
-    <template v-slot:default>
+    <template #default>
       <ul>
         <li>
           <base-badge type="admin" caption="ADMIN"></base-badge>
