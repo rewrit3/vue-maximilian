@@ -29,6 +29,7 @@ const router = createRouter({
     },
     {
       path: '/users',
+      meta: { needsAuth: false },
       components: {
         default: UsersList,
         footer: UsersFooter,
@@ -63,6 +64,8 @@ router.beforeEach(function (to, from, next) {
 
     next();
   } else {
+    console.log('Dont needs auth.');
+
     next();
   }
 
